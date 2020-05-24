@@ -26,7 +26,6 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -179,17 +178,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         currentview = R.layout.activity_main;
 
-        /*
-        ImageButton settingsbtn = findViewById(R.id.settingsImageButton);
-
-        settingsbtn.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View v) {
-                                       setSettingsView();
-                                   }
-                               }
-        );
-        */
         Button browsebtn = findViewById(R.id.browseButton);
 
         browsebtn.setOnClickListener(new View.OnClickListener() {
@@ -376,20 +364,20 @@ public class MainActivity extends AppCompatActivity {
         }
         if(dorotate || doscale) {
             Matrix m = new Matrix();
-            int newh;
-            int neww = PRINTER_WIDTH;
+            //int newh;
+            //int neww = PRINTER_WIDTH;
             if(doscale) {
                 float scale;
                 if(dorotate) {
-                    newh = ((bm.getWidth()*PRINTER_WIDTH)/bm.getHeight());
+                    //newh = ((bm.getWidth()*PRINTER_WIDTH)/bm.getHeight());
                     scale = (float)PRINTER_WIDTH/((float)bm.getHeight());
                 }else{
-                    newh = ((bm.getHeight()*PRINTER_WIDTH)/bm.getWidth());
+                    //newh = ((bm.getHeight()*PRINTER_WIDTH)/bm.getWidth());
                     scale = (float)PRINTER_WIDTH/((float)bm.getWidth());
                 }
                 m.setScale(scale, scale);
             }else{
-                newh = bm.getWidth();
+                //newh = bm.getWidth();
             }
             if(dorotate)
                 m.postRotate(90 );
