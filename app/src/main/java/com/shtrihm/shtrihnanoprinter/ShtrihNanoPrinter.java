@@ -155,8 +155,8 @@ public class ShtrihNanoPrinter {
 
                 ByteArrayOutputStream outstream = new ByteArrayOutputStream();
 
-                for (Bitmap bitmap:
-                     bitmaps) {
+                for (int k =0; k < bitmaps.size(); k++) {
+                    Bitmap bitmap = bitmaps.get(k);
                     int lineid = 0;
                     while(lineid < bitmap.getHeight()){
                         byte start[] = {(byte)0xFE, (byte)0xA9};
@@ -183,7 +183,7 @@ public class ShtrihNanoPrinter {
                                 break;
                             }
                         }
-                        callback.onProgress((lineid*100)/bitmap.getHeight());
+                        callback.onProgress(((lineid*100)/bitmap.getHeight())/bitmaps.size() + (k*100)/bitmaps.size());
                         sendAndRecievedata(outstream.toByteArray());
                     }
                 }
