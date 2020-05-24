@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_settings" />
+
+    <Button
+        android:id="@+id/backFromSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Назад"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_settings">
+
+        <RadioButton
+            android:id="@+id/bluetoothRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth" />
+
+        <RadioButton
+            android:id="@+id/tcpRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WiFi/Internel" />
+
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="IP адрес"
+            android:inputType="textPersonName"
+            android:visibility="invisible" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/backFromSettingsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

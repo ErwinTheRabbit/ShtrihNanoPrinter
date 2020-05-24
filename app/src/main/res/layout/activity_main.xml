@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_main" />
+    <Button
+        android:id="@+id/printButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Печать"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/rasterizedImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/printingProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main" />
+
+    <ProgressBar
+        android:id="@+id/printingProgressBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/printButton"
+        app:layout_constraintStart_toEndOf="@+id/browseButton" />
+
+    <Button
+        android:id="@+id/browseButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Открыть файл"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
