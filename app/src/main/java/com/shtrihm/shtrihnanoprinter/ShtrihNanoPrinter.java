@@ -183,7 +183,7 @@ public class ShtrihNanoPrinter {
                                 break;
                             }
                         }
-                        callback.onProgress(((lineid*100)/bitmap.getHeight())/bitmaps.size() + (k*100)/bitmaps.size());
+                        callback.onProgress(((lineid*1000)/bitmap.getHeight())/bitmaps.size() + (k*1000)/bitmaps.size());
                         sendAndRecievedata(outstream.toByteArray());
                     }
                 }
