@@ -433,6 +433,7 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar pb = findViewById(R.id.printingProgressBar);
         pb.setVisibility(View.VISIBLE);
         pb.setMax(1000);
+        pb.setProgress(0);
         final Handler mainHandler = new Handler(getMainLooper());
         if(printer.startPrining(new ShtrihNanoPrinter.PrintingResultCallback() {
             @Override
